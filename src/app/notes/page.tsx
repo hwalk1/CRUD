@@ -6,9 +6,6 @@ async function getNotes() {
     "http://127.0.0.1:8090/api/collections/notes/records?page=1&perPage=30",
     { cache: "no-store" }
   );
-  if (!res.ok) {
-    throw new Error(`HTTP error! Status: ${res.status}`);
-  }
   const data = await res.json();
   return data?.items as any[];
 }
